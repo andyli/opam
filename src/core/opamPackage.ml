@@ -29,7 +29,7 @@ module Version = struct
 
   let of_string x = x
 
-  let compare = Debian.Version.compare
+  let compare = Versioning.Debian.compare
 
   let to_json x =
     `String (to_string x)

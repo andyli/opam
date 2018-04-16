@@ -203,7 +203,7 @@ let rec reduce_aux env = function
      | FUndef, _ | _, FUndef -> FUndef
      | e,f ->
        FBool (OpamFormula.check_relop relop
-                (Debian.Version.compare (value_string e) (value_string f))))
+                (Versioning.Debian.compare (value_string e) (value_string f))))
   | FAnd (e,f) -> logop2 (&&) false (reduce env e) (reduce env f)
   | FOr (e,f) -> logop2 (||) true (reduce env e) (reduce env f)
   | FNot e -> logop1 not (reduce env e)

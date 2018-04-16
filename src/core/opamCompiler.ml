@@ -30,7 +30,7 @@ module Version = struct
 
   type constr = (OpamFormula.relop * t) OpamFormula.formula
 
-  let compare v1 v2 = Debian.Version.compare (to_string v1) (to_string v2)
+  let compare v1 v2 = Versioning.Debian.compare (to_string v1) (to_string v2)
 
   let eval_relop relop v1 v2 = OpamFormula.check_relop relop (compare v1 v2)
 
