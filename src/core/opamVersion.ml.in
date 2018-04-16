@@ -27,7 +27,7 @@ let compare v w =
   let cut s = match OpamMisc.cut_at s '-' with
     | Some (s,_) -> s
     | None -> s in
-  Debian.Version.compare (cut v) (cut w)
+  Versioning.Debian.compare (cut v) (cut w)
 
 module O = struct
   type t = string
